@@ -88,18 +88,19 @@ header {
     display: none;
     position: fixed;
     top: 0;
-    left: 0;
+    right: -250px;
     width: 250px;
     height: 100%;
     background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     padding: 1em;
     z-index: 1000;
     flex-direction: column;
+    transition: right 0.3s ease;
 }
 
 .side-menu.active {
-    display: flex;
+    right: 0;
 }
 
 .close-btn {
@@ -156,5 +157,20 @@ header {
 
     .menus.active {
         display: flex;
+    }
+
+    .side-menu {
+        width: 200px;
+        padding: 0.5em;
+        right: -200px;
+    }
+
+    .side-menu.active {
+        right: 0;
+    }
+
+    .side-menu button {
+        font-size: 14px;
+        padding: 8px 15px;
     }
 }
