@@ -2,6 +2,50 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1em 0 1em;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    width: 200px;
+    margin-left: 0.5em;
+}
+
+.search-bar.active {
+    display: block;
+}
+
+.search-button {
+    display: none;
+    margin-left: 0.5em;
+    padding: 0.5em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button.active {
+    display: block;
+}
+
 .head-line {
     margin-top: 1em;
     display: flex;
@@ -25,35 +69,92 @@ body {
 .menus button {
     border: none;
     background: none;
-    margin: 5px;
-}
-
-.menus button:last-child {
-    padding-right: 0;
+    margin: 3px 20px;
 }
 
 .menus button:hover {
     color: gray;
 }
 
+.toggleMenu .hamburger {
+    display: none;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.side-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.side-menu.active {
+    display: flex;
+}
+
+.close-btn {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
 .news-img-size {
     width: 100%;
     height: 250px;
+    margin-right: 1em;
+    text-align: center;
     object-fit: cover;
 }
 
 .news {
-    padding: 1vh;
-    border-bottom: 2px solid black;
     display: flex;
+    padding: 1em;
+    border-bottom: 2px solid black;
 }
 
-.news .col-lg- {
+.news .col-lg-8 {
     display: flex;
     flex-direction: column;
+}
+
+.title {
+    font-size: 20pt;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-top: 2em;
 }
 
 .news-source {
     margin-top: auto;
     align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .toggleMenu .hamburger {
+        display: block;
+    }
+
+    .menus {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menus.active {
+        display: flex;
+    }
 }
