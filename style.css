@@ -11,6 +11,8 @@ header {
 .search-container {
     display: flex;
     align-items: center;
+    position: relative;
+
 }
 
 .search-icon {
@@ -26,6 +28,10 @@ header {
     padding: 0.5em;
     width: 200px;
     margin-left: 0.5em;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
 }
 
 .search-bar.active {
@@ -40,6 +46,10 @@ header {
     color: white;
     border: none;
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 240px;
+    transform: translateY(-50%);
 }
 
 .search-button.active {

@@ -60,21 +60,25 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", (event) => {
       const category = event.target.dataset.category;
       getLatestNews(category);
-      closeMenu(); // s
+      closeMenu();
     });
   });
 
   // 검색 버튼 클릭 이벤트 핸들러 추가
   document.getElementById("search-button").addEventListener("click", () => {
     const keyword = document.getElementById("search-bar").value;
-    getLatestNews("", keyword);
+    getLatestNews("", keyword).then(() => {
+      document.getElementById("search-bar").value = "";
+    });
   });
 
   // 엔터 키 입력 이벤트 핸들러 추가
   document.getElementById("search-bar").addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
       const keyword = event.target.value;
-      getLatestNews("", keyword);
+      getLatestNews("", keyword).then(() => {
+        event.target.value = "";
+      });
     }
   });
 
