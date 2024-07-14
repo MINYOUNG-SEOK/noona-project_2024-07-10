@@ -78,9 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let paginationHTML = "";
 
     if (page > 1) {
+      paginationHTML += `<li class="page-item"><a class="page-link" href="#" data-page="1"><<</a></li>`; // 첫 페이지 버튼 추가
       paginationHTML += `<li class="page-item"><a class="page-link" href="#" data-page="${
         page - 1
-      }">Previous</a></li>`; // 이전 페이지 버튼 추가
+      }"><</a></li>`; // 이전 페이지 버튼 추가
     }
 
     for (let i = firstPage; i <= lastPage; i++) {
@@ -92,7 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (page < totalPages) {
       paginationHTML += `<li class="page-item"><a class="page-link" href="#" data-page="${
         page + 1
-      }">Next</a></li>`; // 다음 페이지 버튼 추가
+      }">></a></li>`; // 다음 페이지 버튼 추가
+      paginationHTML += `<li class="page-item"><a class="page-link" href="#" data-page="${totalPages}">>></a></li>`; // 마지막 페이지 버튼 추가
     }
 
     document.querySelector(".pagination").innerHTML = paginationHTML; // 페이지네이션을 화면에 렌더링
